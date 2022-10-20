@@ -1,0 +1,12 @@
+extends: [[spectral:oas, all]]
+#Granular Control
+functions: [houndcustomfunc]
+rules:
+  oas3-unused-component: false
+  #license-url: false
+  hound-customrule:
+    message: "{{error}}"
+    given: "$.definitions..properties.firstname.description"
+    then:
+      function: "houndcustomfunc"
+

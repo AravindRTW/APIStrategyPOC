@@ -1,0 +1,25 @@
+{
+  "name": "houndapi",
+  "version": "1.0.0",
+  "description": "POC",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Aravind Rajendran",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "@stoplight/spectral-core": "^1.15.0",
+    "@stoplight/spectral-functions": "^1.7.1",
+    "@stoplight/spectral-ruleset-bundler": "^1.3.2",
+    "@stoplight/spectral-runtime": "^1.1.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5"
+  }
+}

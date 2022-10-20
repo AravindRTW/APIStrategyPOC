@@ -1,0 +1,35 @@
+
+rules:
+
+
+  # Custom rules
+  pii-firstname:
+    description: PII property names should have a masked firstname field as per HIPPA privacy laws.
+    given: $.definitions..properties
+    severity: error
+    recommended: true
+    then:
+      field: firstname
+      function: falsy
+
+
+  pii-lastname:
+    description: PII property names should have a masked lastname field as per HIPPA privacy laws.
+    given: $.definitions..properties
+    severity: error
+    recommended: true
+    then:
+      field: lastname
+      function: falsy
+
+
+
+
+  pii-dateofbirth:
+    description: PII property names should have a masked dateofbirth field as per HIPPA privacy laws.
+    given: $.definitions..properties
+    severity: error
+    recommended: true
+    then:
+      field: dateofbirth
+      function: falsy

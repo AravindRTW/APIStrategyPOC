@@ -1,0 +1,10 @@
+rules:
+  # Custom rules
+  tag-customsubtags:
+    description: Tags must have a Prudential Subtags.
+    given: $.info.tags
+    severity: error
+    recommended: true
+    then:
+      field: subtags
+      function: truthy
