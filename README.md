@@ -1,5 +1,5 @@
 # HoundAPI
-Hound is a SaC(Styleguide as Code) wrapper package over open source linters that stitches(forks**) together the missing links natively or with the help of other npm packages to offer api linting, api spec resolving, spec conversion and catalogue validation services over the prudential network infrastructure.
+Hound is a SaC(Styleguide as Code) wrapper package over open source linters that stitches(forks**) together the missing links natively or with the help of other npm packages to offer api linting, api spec resolving, spec conversion and catalogue validation services over the prudential network infrastructure. 
 
 
 
