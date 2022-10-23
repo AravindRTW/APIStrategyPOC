@@ -3,7 +3,7 @@ extends: [[spectral:oas, all]]
 functions: [houndcustomfunc]
 rules:
   oas3-unused-component: false
-  #license-url: false
+  license-url: false
   hound-customrule:
     message: "{{error}}"
     given: "$.definitions..properties.firstname.description"

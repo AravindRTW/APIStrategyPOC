@@ -1,0 +1,21 @@
+asyncapi: 2.5.0
+info:
+  title: PubSub
+  version: 0.2.0
+channels:
+  user/healthinsurancesignup:
+    subscribe:
+      message:
+        description: An event describing that a customer just signed up for health insuracne with Prudential.
+        payload:
+          type: object
+          additionalProperties: false
+          properties:
+            fullName:
+              type: string
+            email:
+              type: string
+              format: email
+            age:
+              type: integer
+              minimum: 18

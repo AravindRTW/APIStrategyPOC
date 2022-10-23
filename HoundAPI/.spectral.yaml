@@ -1,4 +1,0 @@
-extends:
-  - ./rulesets/styleguiderulesets/stylerulesets.yaml
-  - ./rulesets/domainrulesets/insurancepiiruleset.yaml
-  - ./rulesets/securityrulesets/secopsrulesets.yaml

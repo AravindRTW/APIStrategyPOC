@@ -18,13 +18,17 @@ import houndRoutes from './HoundAPI/routes/houndroutes.js';
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOINSTANCE); 
 
-
+// JSON 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// Raw 
+app.use(bodyParser.text({ inflate: true, type: 'text/yaml' }));
+// Text
 
-// app.use(function(req, res) {
+
+// app.use(function(req, res) { test ,
 //     res.status(404).send({url: req.originalUrl + ' not found'})
-//   });
+//   }); /
 
 
 

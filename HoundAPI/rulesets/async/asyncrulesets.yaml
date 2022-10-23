@@ -1,0 +1,4 @@
+extends:
+  - ./styleguiderulesets/stylerulesets.yaml
+rules:
+  asyncapi-operation-operationId: false

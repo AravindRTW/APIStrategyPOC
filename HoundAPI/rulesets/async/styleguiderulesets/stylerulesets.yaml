@@ -1,0 +1,17 @@
+extends: [[spectral:asyncapi, all]]
+
+rules:
+
+
+  valid-document-version:
+    description: Version must match 1.x.x.
+    given: $.info
+    severity: error
+    recommended: true
+    then:
+    - field: version
+      function: defined
+    - field: version
+      function: pattern
+      functionOptions:
+        match: "^1(\\.[0-9]+){2}$"

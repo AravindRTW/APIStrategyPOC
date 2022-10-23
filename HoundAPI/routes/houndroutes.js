@@ -12,7 +12,7 @@ const routes = function(app) {
   // Hound Routes
 
 
-  app.route('/lintapi')
+  app.route('/lintapi/:pruspectype')
   .post(lint_pruapi);
 
   app.route('/prumetadata')

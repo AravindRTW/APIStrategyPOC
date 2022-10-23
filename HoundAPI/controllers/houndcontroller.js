@@ -18,24 +18,62 @@ const { fetch } = spectralRuntime;
 
 
 
+
+
+
 export const lint_pruapi = async function(req, res) {
-  const myJSON = JSON.stringify(req.body);
-  const myDocument = new Document(
-    myJSON,
-     Parsers.Json,
-     "APIJSONPAYLOAD",
-   ); 
-    const spectral = new Spectral();   
-     const rulesetFilepath = path.join(process.env.HOUNDEXECPATH, ".spectral.yaml");
+
+  const specType = req.params?.pruspectype;
+  var myDocument ;
+
+
+if(req.headers['content-type'].toLowerCase() == 'application/json')
+{
+//JSON
+     const reqJSON =  JSON.stringify(req.body);
+     myDocument = new Document(reqJSON,  Parsers.Json, "APIJSON-PAYLOAD",);
+
+}
+else if (req.headers['content-type'].toLowerCase()== 'text/yaml') {
+
+  // Raw text -
+  myDocument = new Document(req.body, Parsers.Yaml, "APIYAML-PAYLOAD",);  
+}
+else
+{
+  res.send("Invalid Message Format. Accepted formats are JSON and YAML only.");
+
+}
+
+ const spectral = new Spectral();   
+  var rulesetFilepath = '';
+
+ // Route to the right rule set
+ if(specType.toLowerCase()== 'oas')
+ {
+  rulesetFilepath = path.join(process.env.HOUNDEXECPATH, "rulesets/oas/oasrulesets.yaml");
+
+ }
+ else if(specType.toLowerCase()== 'async')
+ {
+  rulesetFilepath = path.join(process.env.HOUNDEXECPATH, "rulesets/async/asyncrulesets.yaml");
+ }
+else
+{
+  res.send("Invalid file spec type - parameter");
+
+}
+
+
+
      spectral.setRuleset(await bundleAndLoadRuleset(rulesetFilepath, { fs, fetch }));
      spectral.run(myDocument).then((eachres) => {
-      // try catch for run command  
-      res.json(eachres);
-     });
-
+      res.json(eachres);  
+     }); 
+ 
 
 };
-
+ 
 
 export const list_all_prumetadata = async function(req, res) {
    
