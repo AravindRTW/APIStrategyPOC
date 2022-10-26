@@ -25,7 +25,7 @@ export const lint_pruapi = async function(req, res) {
 
   const specType = req.params?.pruspectype;
   var myDocument ;
-
+  try {
 
 if(req.headers['content-type'].toLowerCase() == 'application/json')
 {
@@ -70,7 +70,10 @@ else
      spectral.run(myDocument).then((eachres) => {
       res.json(eachres);  
      }); 
- 
+    }
+    catch(err) {
+      res.send(err,"Critical -  Lintapi failure " );
+    }
 
 };
  

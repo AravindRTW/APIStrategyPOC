@@ -3,8 +3,8 @@ extends: [[spectral:asyncapi, all]]
 rules:
 
 
-  valid-document-version:
-    description: Version must match 1.x.x.
+  prudential-document-version:
+    description: Version must match 1.x.x within Prudential.
     given: $.info
     severity: error
     recommended: true
