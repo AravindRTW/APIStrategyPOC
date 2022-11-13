@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: streetlights
-  description: The Smartylighting Streetlights API allows you to remotely manage the city lights.
+  name: prudential layout
+  description: Events Std Layout
   tags:
-    - mqtt
+    - kafka
   links:
-    - url: https://github.com/asyncapi/asyncapi/blob/master/examples/1.2.0/streetlights.yml
+    - url: https://github.com/prudential.yml
       title: Source Code
       icon: code
 spec:
