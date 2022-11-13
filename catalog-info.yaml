@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: prudential layout
+  name: prudentiallayout
   description: Events Std Layout
   tags:
     - kafka
