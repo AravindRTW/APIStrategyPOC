@@ -2,9 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: stdlayout
-  description: desc
+  description: prudential standard layout encapsulated in the asyc spec to be rendered in backstage
   tags:
-    - mqtt
+    - kafka
   links:
     - url: https://github.com/asyncapi/asyncapi/blob/master/examples/1.2.0/streetlights.yml
       title: Source Code
