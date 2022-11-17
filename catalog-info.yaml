@@ -4,9 +4,9 @@ metadata:
   name: stdlayout
   description: prudential standard layout encapsulated in the asyc spec to be rendered in backstage
   tags:
-    - kafka
+    - kinesis
   links:
-    - url: https://github.com/asyncapi/asyncapi/blob/master/examples/1.2.0/streetlights.yml
+    - url: https://github.com/pru/asyncapi/kinesis.yml
       title: Source Code
       icon: code
 spec:
