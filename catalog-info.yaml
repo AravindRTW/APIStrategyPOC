@@ -4,9 +4,9 @@ metadata:
   name: stdlayout
   description: prudential standard layout encapsulated in the asyc spec to be rendered in backstage
   tags:
-    - kinesis
+    - kafka
   links:
-    - url: https://github.com/pru/asyncapi/kinesis.yml
+    - url: https://github.com/asyncapi/asyncapi/blob/master/examples/1.2.0/streetlights.yml
       title: Source Code
       icon: code
 spec:
@@ -15,282 +15,244 @@ spec:
   owner: team-c
   definition: |
     asyncapi: 2.5.0
-		info:
-			title: Prudential Async API
-			version: 1.0.0
-			description: |
-				The Prudential Async API allows you to  manage the address changes.
-
-				### API Roadmap & Current Scope:
-
-				* Update Address - Available
-				* Search Address - Future Version
-				* Delete Address - Future Version
-			license:
-				name: AWS License 2.0
-				url: https://www.license.org/licenses/LICENSE-2.0
-		servers:
-			test:
-				url: prudential.test.cluster.org:8092
-				protocol: https
-				description: Test broker
-				security:
-					 - jwt: []
-			staging:
-				url: prudential.staging.cluster.org:8092
-				protocol: https
-				description: Staging broker
-				security:
-					 - token: []
-			production:
-				url: prudential.prod.cluster.org:8092
-				protocol: https
-				protocolVersion: '2.0'
-				security:
-					- oauth2: []
-				description: Production broker
-
-
-
-		defaultContentType: application/json
-		channels:
-			prudential.businessdomain.1.0.0.{pruCustomerId}.address.updated:
-				description: The topic on which address updates values may be produced and consumed.
-				parameters:
-					pruCustomerId:
-						"$ref": "#/components/parameters/pruCustomerId"
-				publish:
-					summary: Inform about address changes for a customer.
-					operationId: updateAddressChanges
-
-					message:
-						"$ref": "#/components/messages/addressUpdated"
-				bindings:
-						kinesis:
-						 objectName: topicName
-						sns:
-						sqs:
-						ws:
-							method: get
-		components:
-
-
-			messages:
-				addressUpdated:
-					name: addressUpdated
-					title: Address updated
-					summary: Inform about Address updates of a particular customer.
-					contentType: application/json
-					traits:
-					- "$ref": "#/components/messageTraits/commonHeaders"
-					payload:
-						"$ref": "#/components/schemas/PrudentialEventPayload"
-			schemas:
-				PrudentialEventPayload:
-					type: object
-					properties:
-						id:
-							type: integer
-							minimum: 0
-							description: Identifier for the Event
-						description:
-							type: string
-							description: Description for the Event
-						eventMessage:
-							"$ref": "#/components/schemas/eventMesasge"
-				sourceSystem:
-					type: object
-					properties:
-						eventName:
-							type: string
-							description: Source Event Name type
-						name:
-							type: string
-							description: Source System Name
-						correlationId:
-							type: string
-							description: Unique Identifier
-						eventOccuredTime:
-							type: string
-							format: date-time
-							description: Time when the event occured
-				domain:
-					type: object
-					properties:
-						type:
-							type: string
-							description: Domain type
-						name:
-							type: string
-							description: Domain Name
-				eventAttributes:
-					type: object
-					properties:
-						correlationId:
-							type: string
-							description: Unique Identifier
-						dataElements:
-							"$ref": "#/components/schemas/dataElements"
-				dataElements:
-					type: array
-					properties:
-						payLoad:
-							"$ref": "#/components/schemas/payLoad"
-				payLoad:
-					type: object
-					properties:
-						content:
-							"$ref": "#/components/schemas/content"
-						metadata:
-							"$ref": "#/components/schemas/metadata"
-						orgination:
-							"$ref": "#/components/schemas/orgination"
-						properties:
-							"$ref": "#/components/schemas/properties"
-						type:
-							type: string
-							description: type
-						uid:
-							type: string
-							description: desc of uid
-				content:
-					type: array
-					properties:
-						tempalteId:
-							type: string
-							description: tempalteId
-						tempalteLocation:
-							type: string
-							description: tempalteLocation
-						virtual:
-							"$ref": "#/components/schemas/virtual"
-				virtual:
-					type: object
-					properties:
-						data:
-							"$ref": "#/components/schemas/data"
-				data:
-					type: object
-					properties:
-						additionalProperty1:
-							type: string
-							description: additionalProp1
-						additionalProperty2:
-							type: string
-							description: additionalProp2
-						additionalProperty3:
-							type: string
-							description: additionalProp3
-				metadata:
-					type: object
-					properties:
-						itemSeq:
-							type: string
-							description: itemSeq
-						applicationAttributes:
-							type: array
-							description: array of strings
-						documentNo:
-							type: string
-							description: documentNo Identifier
-						docLocation:
-							type: string
-							description: docLocation
-						policyNumber:
-							type: string
-							description: policyNumber
-						documentType:
-							type: string
-							description: documentType
-						organizationName:
-							type: string
-							description: organizationName
-						trackingInfo:
-							type: string
-							description: trackingInfo
-						userActions:
-							type: array
-							description: array of strings
-						version:
-							type: string
-							description: Version Identifier
-				orgination:
-					type: object
-					properties:
-						applicationID:
-							type: string
-							description: applicationID
-						imageCount:
-							type: integer
-							description: imageCount Identifier
-						pageCount:
-							type: integer
-							description: pageCount
-						priority:
-							type: string
-							description: priority
-						productType:
-							type: string
-							description: productType
-						type:
-							type: string
-							description: type
-						xid:
-							type: string
-							description: xid
-				properties:
-					type: object
-					properties:
-						additionalProperty1:
-							type: string
-							description: additionalProp1
-						additionalProperty2:
-							type: string
-							description: additionalProp2
-						additionalProperty3:
-							type: string
-							description: additionalProp3
-				eventMesasge:
-					type: object
-					properties:
-						sourceSystem:
-							"$ref": "#/components/schemas/sourceSystem"
-						domain:
-							"$ref": "#/components/schemas/domain"
-						eventAttributes:
-							"$ref": "#/components/schemas/eventAttributes"
-			securitySchemes:
-				token:
-					type: httpApiKey
-					name: token
-					in: query
-				jwt:  
-					type: http
-					scheme: bearer
-					bearerFormat: JWT
-				oauth2:
-						type: oauth2
-						flows:
-							implicit:
-								authorizationUrl: https://pru.com/api/oauth/dialog
-								scopes:
-									write:pets: modify address in your account
-									read:pets: read your address
-
-
-			parameters:
-				pruCustomerId:
-					description: The ID of the customer.
-					schema:
-						type: string
-			messageTraits:
-				commonHeaders:
-					headers:
-						type: object
-						properties:
-							my-app-header:
-								type: integer
-								minimum: 0
-								maximum: 100
-  
-          
+    info:
+      title: Prudential Async Kafka API
+      version: 1.0.0
+      description: |
+        The Prudential Async API allows you to  manage the address changes.
+        ### API Roadmap & Current Scope:
+        * Update Address - Available
+        * Search Address - Future Version
+        * Delete Address - Future Version
+      license:
+        name: Apache 2.0
+        url: https://www.apache.org/licenses/LICENSE-2.0
+    servers:
+      test:
+        url: test.mykafkacluster.org:8092
+        protocol: kafka-secure
+        description: Test broker
+        security:
+        - saslScram: []
+    defaultContentType: application/json
+    channels:
+      prudential.addressdomain.1.0.event.{pruCustomerId}.address.updated:
+        description: The topic on which address updates values may be produced and consumed.
+        parameters:
+          pruCustomerId:
+            "$ref": "#/components/parameters/pruCustomerId"
+        publish:
+          summary: Inform about address changes for a customer.
+          operationId: updateAddressChanges
+          traits:
+          - "$ref": "#/components/operationTraits/kafka"
+          message:
+            "$ref": "#/components/messages/addressUpdated"
+    components:
+      messages:
+        addressUpdated:
+          name: addressUpdated
+          title: Address updated
+          summary: Inform about Address updates of a particular customer.
+          contentType: application/json
+          traits:
+          - "$ref": "#/components/messageTraits/commonHeaders"
+          payload:
+            "$ref": "#/components/schemas/PrudentialEventPayload"
+      schemas:
+        PrudentialEventPayload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Identifier for the Event
+            description:
+              type: string
+              description: Description for the Event
+            eventMessage:
+              "$ref": "#/components/schemas/eventMesasge"
+        sourceSystem:
+          type: object
+          properties:
+            eventName:
+              type: string
+              description: Source Event Name type
+            name:
+              type: string
+              description: Source System Name
+            correlationId:
+              type: string
+              description: Unique Identifier
+            eventOccuredTime:
+              type: string
+              format: date-time
+              description: Time when the event occured
+        domain:
+          type: object
+          properties:
+            type:
+              type: string
+              description: Domain type
+            name:
+              type: string
+              description: Domain Name
+        eventAttributes:
+          type: object
+          properties:
+            correlationId:
+              type: string
+              description: Unique Identifier
+            dataElements:
+              "$ref": "#/components/schemas/dataElements"
+        dataElements:
+          type: array
+          properties:
+            payLoad:
+              "$ref": "#/components/schemas/payLoad"
+        payLoad:
+          type: object
+          properties:
+            content:
+              "$ref": "#/components/schemas/content"
+            metadata:
+              "$ref": "#/components/schemas/metadata"
+            orgination:
+              "$ref": "#/components/schemas/orgination"
+            properties:
+              "$ref": "#/components/schemas/properties"
+            type:
+              type: string
+              description: type
+            uid:
+              type: string
+              description: desc of uid
+        content:
+          type: array
+          properties:
+            tempalteId:
+              type: string
+              description: tempalteId
+            tempalteLocation:
+              type: string
+              description: tempalteLocation
+            virtual:
+              "$ref": "#/components/schemas/virtual"
+        virtual:
+          type: object
+          properties:
+            data:
+              "$ref": "#/components/schemas/data"
+        data:
+          type: object
+          properties:
+            additionalProperty1:
+              type: string
+              description: additionalProp1
+            additionalProperty2:
+              type: string
+              description: additionalProp2
+            additionalProperty3:
+              type: string
+              description: additionalProp3
+        metadata:
+          type: object
+          properties:
+            itemSeq:
+              type: string
+              description: itemSeq
+            applicationAttributes:
+              type: array
+              description: array of strings
+            documentNo:
+              type: string
+              description: documentNo Identifier
+            docLocation:
+              type: string
+              description: docLocation
+            policyNumber:
+              type: string
+              description: policyNumber
+            documentType:
+              type: string
+              description: documentType
+            organizationName:
+              type: string
+              description: organizationName
+            trackingInfo:
+              type: string
+              description: trackingInfo
+            userActions:
+              type: array
+              description: array of strings
+            version:
+              type: string
+              description: Version Identifier
+        orgination:
+          type: object
+          properties:
+            applicationID:
+              type: string
+              description: applicationID
+            imageCount:
+              type: integer
+              description: imageCount Identifier
+            pageCount:
+              type: integer
+              description: pageCount
+            priority:
+              type: string
+              description: priority
+            productType:
+              type: string
+              description: productType
+            type:
+              type: string
+              description: type
+            xid:
+              type: string
+              description: xid
+        properties:
+          type: object
+          properties:
+            additionalProperty1:
+              type: string
+              description: additionalProp1
+            additionalProperty2:
+              type: string
+              description: additionalProp2
+            additionalProperty3:
+              type: string
+              description: additionalProp3
+        eventMesasge:
+          type: object
+          properties:
+            sourceSystem:
+              "$ref": "#/components/schemas/sourceSystem"
+            domain:
+              "$ref": "#/components/schemas/domain"
+            eventAttributes:
+              "$ref": "#/components/schemas/eventAttributes"
+      securitySchemes:
+        saslScram:
+          type: scramSha256
+          description: Provide your username and password for SASL/SCRAM authentication
+      parameters:
+        pruCustomerId:
+          description: The ID of the customer.
+          schema:
+            type: string
+      messageTraits:
+        commonHeaders:
+          headers:
+            type: object
+            properties:
+              my-app-header:
+                type: integer
+                minimum: 0
+                maximum: 100
+      operationTraits:
+        kafka:
+          bindings:
+            kafka:
+              clientId: my-app-id
