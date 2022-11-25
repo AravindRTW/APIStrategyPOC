@@ -1,4 +1,4 @@
-site_name: '{hound-doc}'
+site_name: 'hound-docdemo'
 
 nav:
   - Home: index.md
