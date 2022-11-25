@@ -4,7 +4,7 @@ metadata:
   name: petstore
   description: The petstore API
   annotations:
-    backstage.io/techdocs-ref: dir:./oas
+    backstage.io/techdocs-ref: dir:./oas/
   tags:
     - store
     - rest
