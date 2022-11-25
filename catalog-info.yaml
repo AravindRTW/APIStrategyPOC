@@ -6,7 +6,7 @@ metadata:
     prudential standard layout encapsulated in the asyc spec to be rendered in
     backstage
   annotations:
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:./async
   tags:
     - aws
   links:
