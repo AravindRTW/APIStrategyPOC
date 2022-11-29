@@ -18,7 +18,7 @@ headingLevel: 2
 
 ---
 
-<!-- Generator: Widdershins v4.0.1 -->
+<!-- Generator: Widdershins v4.0.-->
 
 <h1 id="swagger-insurance-org">Swagger Insurance Org v1.0.0</h1>
 
