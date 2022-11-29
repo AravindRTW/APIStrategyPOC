@@ -32,7 +32,7 @@ jobs:
         with:
           python-version: '3.9'
 
-      # the 2 steps below can be removed if you aren't using plantuml in your documentation
+      # the 2 steps below can be removed if you aren't using p lantuml in your documentation
       - name: setup java
         uses: actions/setup-java@v3
         with:
