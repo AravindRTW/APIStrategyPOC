@@ -1,6 +1,6 @@
 
 ---
-title: Swagger Insurance Org v1.0.0
+title: Swagger Insurance Org v1.0
 language_tabs:
   - shell: Shell
   - http: HTTP
