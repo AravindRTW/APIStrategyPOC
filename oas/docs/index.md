@@ -27,7 +27,7 @@ headingLevel: 2
 An API that use a Insurance Org as an example to demonstrate features in the swagger-2.0 specification
 
 Base URLs:
-
+ 
 * <a href="http://premiumstore.swagger.io/api">http://premiumstore.swagger.io/api</a>
 
 <a href="http://swagger.io/terms/">Terms of service</a>
