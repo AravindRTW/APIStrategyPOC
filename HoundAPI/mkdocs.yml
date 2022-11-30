@@ -1,11 +1,7 @@
-site_name: 'Hound - Async DaC(Docs as Code) Demo'
+site_name: 'example-docs'
 
 nav:
-  - Home: index.md
+  - Home: readme.md
 
 plugins:
   - techdocs-core
-
-# Uncomment to add extensions if desired
-#markdown_extensions:
-#  - markdown_inline_mermaid
