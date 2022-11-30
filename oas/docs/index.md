@@ -6,7 +6,7 @@ language_tabs:
   - http: HTTP
   - javascript: JavaScript
   - ruby: Ruby
-  - python: Python.
+  - python: Python
   - php: PHP
   - java: Java
   - go: Go
