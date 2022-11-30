@@ -4,7 +4,7 @@ title: Swagger Insurance Org v1.0.0
 language_tabs:
   - shell: shell
   - http: HTTP
-  - javascript: JavaScript
+  - javascript: JavaScript.
   - ruby: Ruby
   - python: Python.
   - php: PHP
