@@ -26,7 +26,7 @@ The Async API allows you to  manage the address changes.
 
 ### `test` Server
 
-* URL: `prudential.test.cluster.org:8092`
+* URL: `ins.test.cluster.org:8092`
 * Protocol: `https`
 
 Test broker
@@ -47,7 +47,7 @@ Test broker
 
 ### `staging` Server
 
-* URL: `prudential.staging.cluster.org:8092`
+* URL: `ins.staging.cluster.org:8092`
 * Protocol: `https`
 
 Staging broker
@@ -68,7 +68,7 @@ Staging broker
 
 ### `production` Server
 
-* URL: `prudential.prod.cluster.org:8092`
+* URL: `ins.prod.cluster.org:8092`
 * Protocol: `https 2.0`
 
 Production broker
@@ -94,7 +94,7 @@ Production broker
 
 ## Operations
 
-### PUB `prudential.businessdomain.1.0.0.{pruCustomerId}.address.updated` Operation
+### PUB `ins.businessdomain.1.0.0.{pruCustomerId}.address.updated` Operation
 
 *Inform about address changes for a customer.*
 
