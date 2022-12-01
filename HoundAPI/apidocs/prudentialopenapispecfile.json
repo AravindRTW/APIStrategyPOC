@@ -26,7 +26,9 @@
   "paths": {
     "/premiums": {
       "get": {
+
         "description": "Returns all premiums from the system that the user has access to. Updated Version from Studio. Integration",
+
         "operationId": "findPremiums",
         "produces": [
           "application/json",
