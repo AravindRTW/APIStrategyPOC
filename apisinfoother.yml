@@ -19,5 +19,5 @@ spec:
   type: openapi
   lifecycle: experimental
   owner: team-c
-  definition: |
-    $text: https://api.apis.guru/v2/openapi.yaml
+  definition:
+    $text: https://petstore.swagger.io/v2/swagger.json
