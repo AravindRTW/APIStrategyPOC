@@ -20,4 +20,4 @@ spec:
   lifecycle: experimental
   owner: team-c
   definition:
-    $text: https://petstore.swagger.io/v2/swagger.json
+    $text: https://raw.githubusercontent.com/AravindRTW/HoundAPI/main/HoundAPI/apidocs/prudentialopenapispecfile.json
