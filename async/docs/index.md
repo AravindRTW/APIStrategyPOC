@@ -4,7 +4,7 @@
 * License: [AWS License 2.0](https://www.license.org/licenses/LICENSE-2.0)
 * Default content type: [application/json](https://www.iana.org/assignments/media-types/application/json)
 
-The Prudential Async API allows you to  manage the address changes.
+The Async API allows you to  manage the address changes.
 
 ### API Roadmap & Current Scope:
 
@@ -20,7 +20,7 @@ The Prudential Async API allows you to  manage the address changes.
   * [staging](#staging-server)
   * [production](#production-server)
 * [Operations](#operations)
-  * [PUB prudential.businessdomain.1.0.0.{pruCustomerId}.address.updated](#pub-prudentialbusinessdomain100prucustomeridaddressupdated-operation)
+  * [PUB Ins.businessdomain.1.0.0.{pruCustomerId}.address.updated](#pub-prudentialbusinessdomain100prucustomeridaddressupdated-operation)
 
 ## Servers
 
