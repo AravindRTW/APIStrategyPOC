@@ -20,4 +20,4 @@ spec:
   lifecycle: experimental
   owner: team-c
   definition: |
-    $openapi: https://api.apis.guru/v2/openapi.yaml
+    $text: https://api.apis.guru/v2/openapi.yaml
