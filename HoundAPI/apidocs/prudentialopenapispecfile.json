@@ -64,17 +64,18 @@
                 "$ref": "#/definitions/Premium"
               }
             },
-            "examples": [
-              [
+            "examples": {
+              "MockData": [
                 {
-                  "firstname": "AravindMockData",
-                  "lastname": "Rajendran- Mock",
-                  "dateofbirth": "31021991",
-                  "tag": "This is from Mock Server",
+                  "name": "MockData",
+                  "firstname": "MFName",
+                  "lastname": "MLName",
+                  "dateofbirth": "string",
+                  "tag": "string",
                   "id": 1
                 }
               ]
-            ]
+            }
           },
           "default": {
             "description": "unexpected error",
@@ -142,6 +143,16 @@
             "description": "premium response",
             "schema": {
               "$ref": "#/definitions/Premium"
+            },
+            "examples": {
+              "MData": {
+                "name": "MockData",
+                "firstname": "Mdata",
+                "lastname": "Mdata",
+                "dateofbirth": "Mdata",
+                "tag": "Mdata",
+                "id": 2
+              }
             }
           },
           "default": {
@@ -200,7 +211,16 @@
             }
           }
         }
-      ]
+      ],
+      "x-examples": {
+        "1": {
+          "firstname": "Aravind Mdata",
+          "lastname": "Rajendran MData",
+          "dateofbirth": "07081993",
+          "tag": "DisMock",
+          "id": 1
+        }
+      }
     },
     "NewPremium": {
       "type": "object",
@@ -221,6 +241,14 @@
         "tag": {
           "type": "string"
         }
+      },
+      "x-examples": {
+        "1": {
+          "firstname": "Mdata",
+          "lastname": "LName",
+          "dateofbirth": "09081982",
+          "tag": "mockdata"
+        }
       }
     },
     "ErrorModel": {
@@ -236,6 +264,12 @@
         },
         "message": {
           "type": "string"
+        }
+      },
+      "x-examples": {
+        "1": {
+          "code": -2147483648,
+          "message": "string"
         }
       }
     }
