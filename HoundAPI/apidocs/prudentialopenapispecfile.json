@@ -15,7 +15,7 @@
   "host": "stoplight.io",
   "basePath": "/mocks/testaccioynt/houndapi/113758630/",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"
