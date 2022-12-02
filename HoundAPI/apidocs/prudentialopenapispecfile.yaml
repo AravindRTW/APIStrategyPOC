@@ -10,7 +10,7 @@ info:
     name: MIT
   version: 1.0.0
 servers:
-- url: http://premiumstore.swagger.io/api
+- url: https://stoplight.io/mocks/testaccioynt/houndapi/113758630
 paths:
   /premiums:
     get:
