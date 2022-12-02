@@ -1,9 +1,9 @@
 asyncapi: 2.5.0
 info:
- title: Prudential Async API
+ title:  Async API
  version: 1.0.0
  description: |
-   The Prudential Async API allows you to  manage the address changes.
+   The  Async API allows you to  manage the address changes.
  
    ### API Roadmap & Current Scope:
  
@@ -15,19 +15,19 @@ info:
    url: https://www.license.org/licenses/LICENSE-2.0
 servers:
  test:
-   url: prudential.test.cluster.org:8092
+   url: ins.test.cluster.org:8092
    protocol: https
    description: Test broker
    security:
       - jwt: []
  staging:
-   url: prudential.staging.cluster.org:8092
+   url: ins.staging.cluster.org:8092
    protocol: https
    description: Staging broker
    security:
       - token: []
  production:
-   url: prudential.prod.cluster.org:8092
+   url: ins.prod.cluster.org:8092
    protocol: https
    protocolVersion: '2.0'
    security:
@@ -38,11 +38,11 @@ servers:
  
 defaultContentType: application/json
 channels:
- prudential.businessdomain.1.0.0.{pruCustomerId}.address.updated:
+ ins.businessdomain.1.0.0.{insCustomerId}.address.updated:
    description: The topic on which address updates values may be produced and consumed.
    parameters:
-     pruCustomerId:
-       "$ref": "#/components/parameters/pruCustomerId"
+     insCustomerId:
+       "$ref": "#/components/parameters/insCustomerId"
    publish:
      summary: Inform about address changes for a customer.
      operationId: updateAddressChanges
@@ -68,9 +68,9 @@ components:
      traits:
      - "$ref": "#/components/messageTraits/commonHeaders"
      payload:
-       "$ref": "#/components/schemas/PrudentialEventPayload"
+       "$ref": "#/components/schemas/InsEventPayload"
  schemas:
-   PrudentialEventPayload:
+   InsEventPayload:
      type: object
      properties:
        id:
@@ -256,14 +256,14 @@ components:
        type: oauth2
        flows:
          implicit:
-           authorizationUrl: https://pru.com/api/oauth/dialog
+           authorizationUrl: https://ins.com/api/oauth/dialog
            scopes:
-             write:pets: modify address in your account
-             read:pets: read your address
+             write:premium: modify address in your account
+             read:premium: read your address
  
   
  parameters:
-   pruCustomerId:
+   insCustomerId:
      description: The ID of the customer.
      schema:
        type: string
