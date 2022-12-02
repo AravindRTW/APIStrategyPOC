@@ -26,11 +26,7 @@
   "paths": {
     "/premiums": {
       "get": {
-
         "description": "Returns all premiums from the system that the user has access to. Updated Version from Studio. Backstage Integration Demo",
-
-
-
         "operationId": "findPremiums",
         "produces": [
           "application/json",
@@ -67,6 +63,18 @@
               "items": {
                 "$ref": "#/definitions/Premium"
               }
+            },
+            "examples": {
+              "MockData": [
+                {
+                  "name": "MockData",
+                  "firstname": "MFName",
+                  "lastname": "MLName",
+                  "dateofbirth": "string",
+                  "tag": "string",
+                  "id": 1
+                }
+              ]
             }
           },
           "default": {
@@ -135,6 +143,16 @@
             "description": "premium response",
             "schema": {
               "$ref": "#/definitions/Premium"
+            },
+            "examples": {
+              "MData": {
+                "name": "MockData",
+                "firstname": "Mdata",
+                "lastname": "Mdata",
+                "dateofbirth": "Mdata",
+                "tag": "Mdata",
+                "id": 2
+              }
             }
           },
           "default": {
@@ -193,7 +211,16 @@
             }
           }
         }
-      ]
+      ],
+      "x-examples": {
+        "1": {
+          "firstname": "Aravind Mdata",
+          "lastname": "Rajendran MData",
+          "dateofbirth": "07081993",
+          "tag": "DisMock",
+          "id": 1
+        }
+      }
     },
     "NewPremium": {
       "type": "object",
@@ -214,6 +241,14 @@
         "tag": {
           "type": "string"
         }
+      },
+      "x-examples": {
+        "1": {
+          "firstname": "Mdata",
+          "lastname": "LName",
+          "dateofbirth": "09081982",
+          "tag": "mockdata"
+        }
       }
     },
     "ErrorModel": {
@@ -229,6 +264,12 @@
         },
         "message": {
           "type": "string"
+        }
+      },
+      "x-examples": {
+        "1": {
+          "code": -2147483648,
+          "message": "string"
         }
       }
     }
