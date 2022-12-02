@@ -26,11 +26,7 @@
   "paths": {
     "/premiums": {
       "get": {
-
         "description": "Returns all premiums from the system that the user has access to. Updated Version from Studio. Backstage Integration Demo",
-
-
-
         "operationId": "findPremiums",
         "produces": [
           "application/json",
@@ -67,7 +63,18 @@
               "items": {
                 "$ref": "#/definitions/Premium"
               }
-            }
+            },
+            "examples": [
+              [
+                {
+                  "firstname": "AravindMockData",
+                  "lastname": "Rajendran- Mock",
+                  "dateofbirth": "31021991",
+                  "tag": "This is from Mock Server",
+                  "id": 1
+                }
+              ]
+            ]
           },
           "default": {
             "description": "unexpected error",
