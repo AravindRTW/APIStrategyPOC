@@ -70,8 +70,8 @@
                   "name": "MockData",
                   "firstname": "MFName",
                   "lastname": "MLName",
-                  "dateofbirth": "string",
-                  "tag": "string",
+                  "dateofbirth": "07071998",
+                  "tag": "TaggerMock",
                   "id": 1
                 }
               ]
