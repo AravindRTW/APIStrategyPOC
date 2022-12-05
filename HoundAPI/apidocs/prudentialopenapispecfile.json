@@ -1,5 +1,4 @@
 {
-
   "openapi": "3.0.0",
   "info": {
     "title": "Swagger Insurance Org",
@@ -15,7 +14,12 @@
   },
   "servers": [
     {
-      "url": "https://stoplight.io/mocks/testaccioynt/houndapi/113758630/"
+      "url": "https://stoplight.io/mocks/testaccioynt/houndapi/113758630/",
+      "description": "Mock Server"
+    },
+    {
+      "url": "liveserver.io",
+      "description": "Live Server"
     }
   ],
   "paths": {
