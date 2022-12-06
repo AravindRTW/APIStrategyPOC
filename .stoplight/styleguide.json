@@ -2,6 +2,9 @@
   "name": "Houndapi",
   "description": "",
   "spectralExtends": [],
+  "extends": [
+    "cHJqOjEyMzU4Ng@35"
+  ],
   "formats": [
     "oas2",
     "oas3",
@@ -9,10 +12,19 @@
     "oas3.1"
   ],
   "aliases": {},
-  "rules": {},
-  "extends": [
-    "cHJqOjEyMzU4Ng@35"
-  ],
+  "rules": {
+    "custom-rule1": {
+      "given": [],
+      "severity": "error",
+      "then": {
+        "function": "truthy"
+      },
+      "name": "custom-rule1",
+      "formats": [
+        "oas3.0"
+      ]
+    }
+  },
   "extendedStyleguides": [
     {
       "id": "cHJqOjEyMzU4Ng",

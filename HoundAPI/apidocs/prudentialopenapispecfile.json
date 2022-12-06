@@ -49,6 +49,9 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "$ref": "#/components/parameters/Content-Type"
           }
         ],
         "responses": {
@@ -100,6 +103,9 @@
                 ]
               }
             }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
           },
           "default": {
             "description": "unexpected error",
@@ -165,7 +171,17 @@
           }
         },
         "x-codegen-request-body-name": "premium"
-      }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "",
+          "in": "path",
+          "required": true
+        }
+      ]
     },
     "/premiums/{id}": {
       "get": {
@@ -351,6 +367,42 @@
             "message": "string"
           }
         }
+      }
+    },
+    "responses": {
+      "401": {
+        "description": "Custom code",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "version": {
+        "name": "version",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "version information"
+      },
+      "Content-Type": {
+        "name": "Content-Type",
+        "in": "header",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "application/json"
       }
     }
   }
