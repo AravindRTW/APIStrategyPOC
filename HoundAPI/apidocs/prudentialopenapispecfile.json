@@ -49,9 +49,6 @@
               "type": "integer",
               "format": "int32"
             }
-          },
-          {
-            "$ref": "#/components/parameters/Content-Type"
           }
         ],
         "responses": {
@@ -172,16 +169,7 @@
         },
         "x-codegen-request-body-name": "premium"
       },
-      "parameters": [
-        {
-          "schema": {
-            "type": "string"
-          },
-          "name": "",
-          "in": "path",
-          "required": true
-        }
-      ]
+      "parameters": []
     },
     "/premiums/{id}": {
       "get": {
