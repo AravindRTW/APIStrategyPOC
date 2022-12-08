@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: prudentvaulttest
+  name: prudentvauslttest
   description: The prudential insurance API
   annotations:
     vault.io/secrets-path: secret/my-secret
