@@ -6,7 +6,7 @@ channels:
   user/healthinsurancesignup:
     subscribe:
       message:
-        description: An event describing that a customer just signed up for health insuracne with Prudential.
+        description: An events describing that a customer just signed up for health insuracne with Prudential.
         payload:
           type: object
           additionalProperties: false
