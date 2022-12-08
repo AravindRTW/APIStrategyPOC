@@ -1,9 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: prudentfstore
+  name: prudentapistorewithvault
   description: The prudential insurance API
   annotations:
+    vault.io/secrets-path: secret/data/piifield
     backstage.io/techdocs-ref: dir:./oas/
   tags:
     - store
