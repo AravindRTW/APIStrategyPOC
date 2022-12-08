@@ -4,7 +4,7 @@ metadata:
   name: prudentvaulttest
   description: The prudential insurance API
   annotations:
-    vault.io/secrets-path: my-secret
+    vault.io/secrets-path: secret/my-secret
     backstage.io/techdocs-ref: dir:./oas/
   tags:
     - store
