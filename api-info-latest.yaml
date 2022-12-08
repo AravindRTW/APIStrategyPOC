@@ -4,7 +4,7 @@ metadata:
   name: prudentapistorewithvault
   description: The prudential insurance API
   annotations:
-    vault.io/secrets-path: secret/data/piifield
+    vault.io/secrets-path: kv/hello
     backstage.io/techdocs-ref: dir:./oas/
   tags:
     - store
