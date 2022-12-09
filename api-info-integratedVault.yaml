@@ -6,6 +6,7 @@ metadata:
   annotations:
     vault.io/secrets-path: apikey
     backstage.io/techdocs-ref: dir:./oas/
+    sonarqube.org/project-key: YOUR_INSTANCE_NAME/YOUR_PROJECT_KEY
   tags:
     - store
     - rest
