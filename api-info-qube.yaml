@@ -6,7 +6,7 @@ metadata:
   annotations:
     vault.io/secrets-path: apikey
     backstage.io/techdocs-ref: dir:./oas/
-    sonarqube.org/project-key: HoundAPI
+    sonarqube.org/project-key: LocalSonarQube
   tags:
     - store
     - rest
