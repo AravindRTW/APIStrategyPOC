@@ -57,7 +57,9 @@ jobs:
 
       - name: Generate docs site
         working-directory: HoundAPI
-        run: techdocs-cli generate --no-docker --verbose
+        run: |
+          cd /home/runner/work/HoundAPI/HoundAPI/
+          techdocs-cli generate --no-docker --verbose
 
       - name: Publish docs site
         #working-directory: /home/runner/work/HoundAPI
