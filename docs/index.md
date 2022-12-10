@@ -6,7 +6,7 @@ stoplight-id: 2f3t4wx5p9g7s
 
 # Markdown Prudential Docs as Code
 
-## Use the Same Plumbing we use for code review process
+## Use the Same Plumbing we use for code review processd
 
 # This will be pushed into the Git repo
 ## CIC/CD will publish this to AWs S3 bucket or Azure Blob Storage
