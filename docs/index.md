@@ -18,7 +18,7 @@ stoplight-id: 2f3t4wx5p9g7s
 _Capabilities for for Developer Portal_
 
 **Spec rendering and Mocking**  
-__Integration with CI/CD and APIs access management__
+__Integration with CI/CD and API access management__
 
 
 
