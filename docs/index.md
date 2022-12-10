@@ -12,15 +12,15 @@ stoplight-id: 2f3t4wx5p9g7s
 ## CIC/CD will publish this to AWs S3 bucket or Azure Blob Storage
 ###### Developer Work flow
 
-## Emphasis
+## Hound API
 
-*This text will be italic*  
-_This will also be italic_
+*Linting as a Service*  
+_Capabilities for for Developer Portal_
 
-**This text will be bold**  
-__This will also be bold__
+**Spec rendering and Mocking**  
+__Integration with CI/CD and API access management__
 
-_You **can** combine them_
+
 
 ## Lists
 
