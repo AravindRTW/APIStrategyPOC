@@ -57,7 +57,7 @@ jobs:
 
       - name: Generate docs site
         run: |
-          cd /home/runner/work/HoundAPI/
+          cd /home/runner/work/HoundAPI/HoundAPI/
           echo "$HOME"
           ls
           pwd
