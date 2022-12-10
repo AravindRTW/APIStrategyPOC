@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: prudentialhelp
+  name: prudentialapi
   description: The prudential insurance API
   annotations:
     vault.io/secrets-path: apikey
     backstage.io/techdocs-ref: dir:./oas/
-    sonarqube.org/project-key: Help
+    sonarqube.org/project-key: TestKey
   tags:
     - store
     - rest
