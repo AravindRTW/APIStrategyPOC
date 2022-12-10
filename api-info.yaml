@@ -5,7 +5,7 @@ metadata:
   description: The prudential insurance API
   annotations:
     vault.io/secrets-path: apikey
-    backstage.io/techdocs-ref: dir:./oas/
+    backstage.io/techdocs-ref: dir:./
     sonarqube.org/project-key: TestKey
   tags:
     - store
