@@ -1,7 +1,9 @@
 name: Run Spectral on Push Requests
 
 on:
-  - push
+  push:
+    paths:
+      - '**.yaml'
 
 jobs:
   build:
