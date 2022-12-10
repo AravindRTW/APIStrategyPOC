@@ -9,7 +9,7 @@ stoplight-id: 2f3t4wx5p9g7s
 ## Use the Same Plumbing we use for code review process
 
 # This will be pushed into the Git repo
-## CIC/CD will publish this to AWs S3 bucket or Azure Blob Storage.
+## CIC/CD will publish this to AWs S3 bucket or Azure Blob Storage
 ###### Developer Work flow
 
 ## Hound API
