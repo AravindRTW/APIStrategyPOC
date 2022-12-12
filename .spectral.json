@@ -1262,16 +1262,6 @@
       "formats": [
         "oas3"
       ]
-    },
-    "custom-rule1": {
-      "given": [],
-      "severity": "error",
-      "then": {
-        "function": "truthy"
-      },
-      "formats": [
-        "oas3.0"
-      ]
     }
   },
   "functions": [
