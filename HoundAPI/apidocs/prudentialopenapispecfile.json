@@ -25,7 +25,7 @@
   "paths": {
     "/premiums": {
       "get": {
-        "description": "Returns all premiums from the system that the user has access to. New Updated Version from Studio. Pre-Showcase prep",
+        "description": "Returns all premiums from the system that the user has access to. New Updated Version from Studio. Pre-Showcase prep material.",
         "operationId": "findPremiums",
         "parameters": [
           {
