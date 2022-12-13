@@ -142,27 +142,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Premium"
-              },
-              "examples": {
-                "Example 1": {
-                  "value": {
-                    "firstname": "ShowcaseMockFirst",
-                    "lastname": "ShowcaseMockLast",
-                    "dateofbirth": "07081994",
-                    "tag": "MockServerData",
-                    "id": 1
-                  }
-                }
-              }
-            }
-          },
-          "description": ""
         }
       },
       "post": {
