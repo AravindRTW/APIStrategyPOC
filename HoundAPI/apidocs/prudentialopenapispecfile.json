@@ -117,6 +117,9 @@
           "401": {
             "$ref": "#/components/responses/401"
           },
+          "422": {
+            "$ref": "#/components/responses/422"
+          },
           "default": {
             "description": "unexpected error",
             "content": {
@@ -139,6 +142,15 @@
                 "schema": {
                   "$ref": "#/components/schemas/ErrorModel"
                 }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "integer"
               }
             }
           }
@@ -412,6 +424,24 @@
           "multipart/form-data": {
             "schema": {
               "$ref": "#/components/schemas/ErrorModel"
+            }
+          }
+        }
+      },
+      "422": {
+        "description": "This is a custom response with error code",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErrorModel"
+            },
+            "examples": {
+              "Example 1": {
+                "value": {
+                  "code": 0,
+                  "message": "This is custom erroe message"
+                }
+              }
             }
           }
         }
