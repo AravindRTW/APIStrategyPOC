@@ -420,7 +420,7 @@
         }
       },
       "422": {
-        "description": "This is a custom response with error code",
+        "description": "This is a custom response with error code. Error Model attached",
         "content": {
           "application/json": {
             "schema": {
