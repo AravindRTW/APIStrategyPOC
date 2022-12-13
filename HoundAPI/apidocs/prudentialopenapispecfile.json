@@ -145,15 +145,6 @@
               }
             }
           }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "integer"
-              }
-            }
-          }
         }
       },
       "post": {
@@ -439,7 +430,7 @@
               "Example 1": {
                 "value": {
                   "code": 0,
-                  "message": "This is custom erroe message"
+                  "message": "This is custom showcase error message"
                 }
               }
             }
