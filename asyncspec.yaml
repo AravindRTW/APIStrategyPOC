@@ -117,9 +117,12 @@ components:
          "$ref": "#/components/schemas/dataElements"
    dataElements:
      type: array
-     properties:
-       payLoad:
-         "$ref": "#/components/schemas/payLoad"
+     description: 'array of payload objects'
+     items:
+       type: object
+       properties:
+         payLoad:
+           "$ref": "#/components/schemas/payLoad"
    payLoad:
      type: object
      properties:
@@ -174,6 +177,8 @@ components:
        applicationAttributes:
          type: array
          description: array of strings
+         items:
+           type: string
        documentNo:
          type: string
          description: documentNo Identifier
@@ -195,6 +200,8 @@ components:
        userActions:
          type: array
          description: array of strings
+         items:
+           type: string
        version:
          type: string
          description: Version Identifier
