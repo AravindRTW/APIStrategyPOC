@@ -142,15 +142,17 @@ components:
          description: desc of uid
    content:
      type: array
-     properties:
-       tempalteId:
-         type: string
-         description: tempalteId
-       tempalteLocation:
-         type: string
-         description: tempalteLocation
-       virtual:
-         "$ref": "#/components/schemas/virtual"
+     items:
+       type: object
+       properties:
+         tempalteId:
+           type: string
+           description: tempalteId
+         tempalteLocation:
+           type: string
+           description: tempalteLocation
+         virtual:
+           "$ref": "#/components/schemas/virtual"
    virtual:
      type: object
      properties:
