@@ -18,4 +18,4 @@ spec:
   lifecycle: production
   owner: team-c
   definition: 
-    $text: https://raw.githubusercontent.com/AravindRTW/HoundAPI/main/asyncspec.yaml
+    $text: https://raw.githubusercontent.com/AravindRTW/HoundAPI/main/HoundAPI/apidocs/prudentialasyncapispecfile.yaml
